@@ -1,16 +1,25 @@
 /* Main app */
-.header{
+.header {
   padding-top: 12px;
   background: #fff;
 }
 
-.content{
+.content {
   margin: 24px 16px;
   padding: 20px;
 }
 
+.triger-btn {
+  font-size: 16px;
+  width: 50px;
+  height: 50px;
+  position: fixed;
+  bottom: 10px;
+  left: 10px;
+}
+
 /* Sider */
-.sider{
+.sider {
   height: 100vh;
   position: sticky !important;
   left: 0;
@@ -18,8 +27,65 @@
   top: 0;
 }
 
-.logo{
+.logo {
   color: #4f6f52;
-  margin: 30px 0;
+  margin: 40px 0;
   font-size: 1.5rem;
+}
+
+
+.menu-bar {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  font-weight: 500;
+}
+
+.ant-menu-item-selected {
+  background-color: #4f6f52 !important;
+  color: #fff ! important;
+}
+
+/* header */
+.header-icon {
+  background: #d2e3c8;
+  padding: 8px;
+  border-radius: 4px;
+  font-size: 15px;
+  cursor: pointer;
+}
+
+/* button */
+.ant-btn :hover {
+  color: #4f6f52 !important;
+  border-color: #4f6f52 !important;
+}
+
+.ant-btn-primary {
+  border-color: #4f6f52;
+}
+
+.ant-btn-primary:hover {
+  color: #173a2a !important;
+  border-color: #fff !important;
+}
+
+.primary--color{
+  color: #4f6f52!important;
+}
+
+.primary--light--color{
+  color: #739072!important;
+}
+
+.secondary--color{
+  color: #86a789!important;
+}
+
+.light--color{
+  color: #d2e3c8!important;
+}
+
+.gray--color{
+  color: rgb(182, 181, 181) !important;
 }
