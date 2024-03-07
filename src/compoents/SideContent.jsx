@@ -1,8 +1,12 @@
 import React from 'react'
+import {Flex} from 'antd'
+import ContentSidebar from './ContentSidebar';
 
 const SideContent = () => {
   return (
-    <div style={{width: 300}}>SideContent</div>
+    <Flex vertical gap="2.3em" style={{width: 300}}>
+      <ContentSidebar/>
+    </Flex >
   )
 }
 
