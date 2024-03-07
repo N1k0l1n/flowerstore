@@ -13,7 +13,7 @@ const ContentSidebar = () => {
             This Month <br /> 240 orders
           </Typography.Title>
         </Flex>
-        <Image
+        {/* <Image
           src=""
           alt="plant"
           style={{
@@ -23,7 +23,7 @@ const ContentSidebar = () => {
             height: "300px",
             width: "auto",
           }}
-        />
+        /> */}
       </Card>
     </div>
   );
