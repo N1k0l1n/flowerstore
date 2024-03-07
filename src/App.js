@@ -1,24 +1,36 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import React, { useState } from "react";
+import { Button, Layout } from "antd";
+import { MenuUnfoldOutlined, MenuFoldOutlined } from "@ant-design/icons";
+import Sidebar from "./compoents/Sidebar";
+const { Sider, Header, Content } = Layout;
 
 function App() {
+  const [collapsed, setCollapsed] = useState(false);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
+    <Layout>
+      <Layout>
+        <Sider
+          theme="light"
+          trigger={null}
+          collapsible
+          collapsed={collapsed}
+          className="sider"
         >
-          Learn React
-        </a>
-      </header>
-    </div>
+          <Sidebar />
+
+          <Button
+            type="text"
+            icon={collapsed ? <MenuUnfoldOutlined /> : <MenuFoldOutlined />}
+            onClick={()=>setCollapsed(!collapsed)}
+            className="triger-btn"
+          />
+        </Sider>
+      </Layout>
+      <Header className="header"></Header>
+      <Content className="content"></Content>
+    </Layout>
   );
 }
 
