@@ -67,7 +67,6 @@ const Sidebar = () => {
           <Menu.Item key={item.key} icon={item.icon}>
             <NavLink
               to={item.path}
-              activeClassName="active"
             >
               {item.label}
             </NavLink>
