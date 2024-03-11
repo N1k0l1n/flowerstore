@@ -9,7 +9,7 @@ const Plants = () => {
     useEffect(() => {
       const getPlants = async () => {
         try {
-            const url = process.env.REACT_APP_API_ENDPOINT;
+            const url = 'https://perenual.com/api/species-list?key=sk-1K0R65e9bcd98ff784492';
             const response = await fetch(url);
             
             if (!response.ok) {
