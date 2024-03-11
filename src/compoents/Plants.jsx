@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import { useRecoilState } from "recoil";
 import { plantState } from '../state/atoms/PlantState';
-import { Button, Table } from "antd";
+import { Table } from "antd";
 
 const Plants = () => {
     const [plants, setPlants] = useRecoilState(plantState);
@@ -9,8 +9,7 @@ const Plants = () => {
     useEffect(() => {
       const getPlants = async () => {
         try {
-            const url = 'https://perenual.com/api/species-list?key=sk-1K0R65e9bcd98ff784492';
-            console.log(url);
+            const url = process.env.REACT_APP_API_ENDPOINT;
             const response = await fetch(url);
             
             if (!response.ok) {
@@ -53,6 +52,21 @@ const Plants = () => {
             key: 'scientific_name',
             render: scientificNames => scientificNames.join(', '), // Join array elements into a string
         },
+        {
+            title: 'Cycle',
+            dataIndex: 'cycle',
+            key: 'cycle',
+        },
+        {
+            title: 'Watering',
+            dataIndex: 'watering',
+            key: 'watering',
+        },
+        {
+            title: 'Sunlight',
+            dataIndex: 'sunlight',
+            key: 'sunlight',
+        },
         // Add more columns as needed
     ];
 
@@ -62,21 +76,16 @@ const Plants = () => {
         id: plant.id,
         common_name: plant.common_name,
         scientific_name: plant.scientific_name,
+        cycle: plant.cycle,
+        watering: plant.watering,
+        sunlight: plant.sunlight,
         // Map other properties as needed
     }));
 
-    function addPlant() {
-        setPlants(prevPlants => [...prevPlants, { id: Math.random() }]);
-    }
 
-    function clearPlants() {
-        setPlants([]);
-    }
 
     return (
         <div>
-            <Button onClick={addPlant}>Add Plant</Button>
-            <Button onClick={clearPlants}>Clear Plants</Button>
             <Table dataSource={dataSource} columns={columns} />;
         </div>
     );

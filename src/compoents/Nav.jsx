@@ -3,7 +3,7 @@ import { Button, Layout, Flex } from "antd";
 import { MenuUnfoldOutlined, MenuFoldOutlined } from "@ant-design/icons";
 import Sidebar from "./Sidebar";
 import MainContent from "./MainContent";
-import SideContent  from "./SideContent";
+import SideContent from "./SideContent";
 import CustomHeader from "./Header";
 import { Routes, Route } from "react-router-dom";
 import Plants from "./Plants";
@@ -37,9 +37,16 @@ const Nav = () => {
         <Content className="content">
           <Flex gap="large">
             <Routes>
-              <Route path="/dashboard" element={<MainContent />} />
-              <Route path="/dashboard" element={<SideContent/>} />
-              <Route path="/todo" element={<Plants/>} />
+              <Route
+                path="/dashboard"
+                element={
+                  <Flex gap="large">
+                    <MainContent />
+                    <SideContent />
+                  </Flex>
+                }
+              />
+              <Route path="/todo" element={<Plants />} />
               {/* Add more routes here */}
             </Routes>
           </Flex>
